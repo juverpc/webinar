@@ -1,0 +1,1 @@
+# Este archivo puede quedar vacío si no necesitas variables a nivel de entorno.
