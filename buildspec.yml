@@ -9,8 +9,6 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - pwd
-      - ls 
       # Navega al directorio del entorno de pruebas.
       - cd environments/test
       # Inicializa Terraform, descargando módulos y el backend.
@@ -18,8 +16,6 @@ phases:
   build:
     commands:
       - echo Entered the build phase...
-      # Navega al directorio del entorno
-      - cd environments/test
       # Aplica los cambios de Terraform automáticamente sin solicitar confirmación.
       - terraform apply -auto-approve
   post_build:
@@ -29,5 +25,3 @@ phases:
       - cd environments/test
       # Muestra la IP pública de la instancia de EC2
       - echo "Despliegue de Terraform completado."
-      - echo "La IP de la instancia es:"
-      - terraform output public_ip
