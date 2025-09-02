@@ -9,6 +9,8 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
+      - pwd
+      - ls 
       # Navega al directorio del entorno de pruebas.
       - cd environments/test
       # Inicializa Terraform, descargando módulos y el backend.
