@@ -17,11 +17,9 @@ phases:
     commands:
       - echo Entered the build phase...
       # Aplica los cambios de Terraform automáticamente sin solicitar confirmación.
-      - terraform apply -auto-approve
+      - terraform destroy -auto-approve
   post_build:
     commands:
       - echo Entered the post_build phase...
-      # Navega al directorio del entorno
-      - cd environments/test
       # Muestra la IP pública de la instancia de EC2
       - echo "Despliegue de Terraform completado."
