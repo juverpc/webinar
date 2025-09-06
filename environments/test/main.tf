@@ -1,3 +1,18 @@
+provider "aws" {
+	region = "us-east-1"
+}
+
+terraform {
+  backend "s3" {
+    bucket         = "terraform-bucket-juver"
+    key            = "environments/test/terraform.tfstate"
+    region         = "us-east-1"               # Cambia por tu región
+    dynamodb_table = "terraform-locks"         # Opcional pero recomendado para lock
+    encrypt        = true
+  }
+}
+
+
 # Llama al módulo de red
 module "network" {
   source = "../../modules/network"
