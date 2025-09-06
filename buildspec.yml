@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    TF_ACTION: "apply"   # Puede ser "apply" o "destroy"
+    TF_ACTION: "destroy"   # Puede ser "apply" o "destroy"
 
 phases:
   install:
@@ -27,4 +27,4 @@ phases:
   post_build:
     commands:
       - echo "Entrando en post_build..."
-      - echo "Acción" $TF_ACTION "completada correctamente."
+      - echo $TF_ACTION "completada correctamente."
