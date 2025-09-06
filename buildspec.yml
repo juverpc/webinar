@@ -24,7 +24,6 @@ phases:
       - if [ "$TF_ACTION" = "destroy" ]; then terraform plan -destroy -input=false; fi
       - if [ "$TF_ACTION" = "destroy" ]; then terraform destroy -auto-approve -input=false; fi
       - if [ "$TF_ACTION" != "apply" ] && [ "$TF_ACTION" != "destroy" ]; then echo "Acción no válida: $TF_ACTION"; exit 1; fi
-
   post_build:
     commands:
       - echo "Entrando en post_build..."
