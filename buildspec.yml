@@ -19,10 +19,6 @@ phases:
   build:
     commands:
       - echo "Entrando en build phase con acción: $TF_ACTION"
-        build:
-    commands:
-      - echo "Entrando en build phase con acción: $TF_ACTION"
-      - echo "Entrando en build phase con acción: $TF_ACTION"
       - if [ "$TF_ACTION" = "apply" ]; then terraform plan -input=false; fi
       - if [ "$TF_ACTION" = "apply" ]; then terraform apply -auto-approve -input=false; fi
       - if [ "$TF_ACTION" = "destroy" ]; then terraform plan -destroy -input=false; fi
